@@ -1,0 +1,96 @@
+body
+{
+	font-family: 'Lucida Grande', 'Lucida Sans Unicode', Verdana, Arial, 'Segoe UI', sans-serif;
+	font-size: 13px;
+	margin: 0;
+}
+
+.field
+{
+	margin-bottom: 1.2em;
+}
+
+label
+{
+	font-family: 'Lucida Grande', 'Lucida Sans Unicode', Verdana, Arial, 'Segoe UI', sans-serif;
+	color: #7c848d;
+	font-weight: bold;
+	display: block;
+}
+
+.flexible
+{
+	display: block;
+	overflow: hidden;
+	margin: 2px 0;
+}
+input,
+textarea
+{
+	font-family: 'Lucida Grande', 'Lucida Sans Unicode', Verdana, Arial, 'Segoe UI', sans-serif;
+	font-weight: bold;
+	font-size: 12px;
+	color: #7c848d;
+	border-radius: 3px;
+	border: 1px solid #bbb;
+	box-shadow: inset 0px 4px 5px -3px #bbb;
+	padding: 0.25em;
+	width: 100%;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+input:focus,
+textarea:focus
+{
+	border-color: #999;
+	box-shadow: 0 0 5px #aaa;
+}
+.field img
+{
+	float: right;
+}
+
+button
+{
+	font-family: 'Lucida Grande', 'Lucida Sans Unicode', Verdana, Arial, 'Segoe UI', sans-serif;
+	font-weight: bold;
+	font-size: 12px;
+	letter-spacing: 1px;
+	color: #666;
+	background-image: linear-gradient(to top, #ddd, #fcfcfc);
+	float: right;
+	border: 1px solid #bbb;
+	border-radius: 3px;
+	padding: 0.6em 1.8em;
+	margin-right: 3px;
+}
+button:hover
+{
+	box-shadow: 0px 0px 2px #0b65ae;
+}
+
+.error
+{
+	color: white;
+	background-color: #be5f5f;
+	background-image: linear-gradient(to top, #a94242, #be5f5f);
+	padding: 0.5em;
+	margin-bottom: 1.2em;
+}
+.error img
+{
+	float: left;
+}
+.error span
+{
+	display: block;
+	padding: 0 2em 2em;
+}
+
+.mensaje
+{
+	color: #0b65ae;
+	font-size: 15px;
+	line-height: 22px;
+	margin-bottom: 1.2em;
+}
