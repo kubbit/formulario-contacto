@@ -104,7 +104,7 @@ $translation = array
 	)
 );
 
-function _($token, $lang = null)
+function __($token, $lang = null)
 {
 	global $translation, $lang;
 
