@@ -12,14 +12,14 @@ $CAMPOS =
 /*
  * 	[Texto, Tipo, Requerido, Valores (array), Id Campo, Valor]
  */
-	[_('Nombre'), 'text', false, null, 'name'],
-	[_('Apellidos'), 'text', true, null, 'surnames'],
-	[_('Email'), 'email', false, null, 'mail'],
-	[_('Teléfono'), 'text', false, null, 'phone'],
-	[_('NIF'), 'nif', true, null, 'nid'],
-	[_('Mensaje'), 'memo', true, null, 'message'],
-	[_('Modo respuesta'), 'array', false, [0 => _('No responder'), 1 => _('Correo electrónico'), 2 => _('Por teléfono'), 3 => _('Por escrito')], 'reply'],
-	[_('Idioma'), 'hidden', false, null, 'lang', $lang]
+	[__('Nombre'), 'text', false, null, 'name'],
+	[__('Apellidos'), 'text', true, null, 'surnames'],
+	[__('Email'), 'email', false, null, 'mail'],
+	[__('Teléfono'), 'text', false, null, 'phone'],
+	[__('NIF'), 'nif', true, null, 'nid'],
+	[__('Mensaje'), 'memo', true, null, 'message'],
+	[__('Modo respuesta'), 'array', false, [0 => __('No responder'), 1 => __('Correo electrónico'), 2 => __('Por teléfono'), 3 => __('Por escrito')], 'reply'],
+	[__('Idioma'), 'hidden', false, null, 'lang', $lang]
 ];
 $formulario = new Formulario(Formulario::MODE_GERKUD, 'http://gerkud.example.org/horkonpon/', null, $CAMPOS);
 

@@ -10,7 +10,7 @@
 	<body>
 <?php if (count($formulario->errores) > 0): ?>
 		<div class="error">
-			<img src="img/error-white.png" alt="<?php echo _('Error'); ?>" />
+			<img src="img/error-white.png" alt="<?php echo __('Error'); ?>" />
 		<?php foreach ($formulario->errores as $error): ?>
 			<span><?php echo $error; ?></span>
 		<?php endforeach; ?>
@@ -28,12 +28,12 @@
 	<?php if ($campo[Formulario::PROP_TYPE] !== 'hidden'): ?>
 				<label for="<?php echo $campo[Formulario::PROP_ID]; ?>" ><?php echo $campo[Formulario::PROP_TEXT]; ?>
 		<?php if ($campo[Formulario::PROP_REQUIRED]): ?>
-					<span title="<?php echo _('Es necesario completar este campo de formulario'); ?>">*</span>
+					<span title="<?php echo __('Es necesario completar este campo de formulario'); ?>">*</span>
 		<?php endif; ?>
 				</label>
 	<?php endif; ?>
 	<?php if (isset($formulario->errores[$campo[Formulario::PROP_ID]])): ?>
-				<img src="img/error-red.png" alt="<?php echo _('Error'); ?>" />
+				<img src="img/error-red.png" alt="<?php echo __('Error'); ?>" />
 	<?php endif; ?>
 				<div class="flexible">
 	<?php switch($campo[Formulario::PROP_TYPE]):
@@ -57,7 +57,7 @@
 				</div>
 			</div>
 <?php endforeach; ?>
-			<button type="submit" id="botonSubmit" class="boton"><span><?php echo _('Enviar'); ?></span></button>
+			<button type="submit" id="botonSubmit" class="boton"><span><?php echo __('Enviar'); ?></span></button>
 		</form>
 	</body>
 </html>

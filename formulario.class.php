@@ -54,13 +54,13 @@ class Formulario
 		foreach ($this->CAMPOS as $campo)
 		{
 			if ($campo[self::PROP_REQUIRED] && empty(filter_input(INPUT_POST, $campo[self::PROP_ID])) && empty($_FILES[$campo[self::PROP_ID]]['name']))
-				$this->errores[$campo[self::PROP_ID]] = sprintf(_('Falta un campo requerido: %s'), $campo[self::PROP_TEXT]);
+				$this->errores[$campo[self::PROP_ID]] = sprintf(__('Falta un campo requerido: %s'), $campo[self::PROP_TEXT]);
 
 			if (!empty(filter_input(INPUT_POST, $campo[self::PROP_ID])) && $campo[self::PROP_TYPE] === 'email' && !filter_var(filter_input(INPUT_POST, $campo[self::PROP_ID]), FILTER_VALIDATE_EMAIL))
-				$this->errores[$campo[self::PROP_ID]] = sprintf(_('El campo introducido no es válido (%s): Escribe un e-mail válido'), $campo[self::PROP_TEXT]);
+				$this->errores[$campo[self::PROP_ID]] = sprintf(__('El campo introducido no es válido (%s): Escribe un e-mail válido'), $campo[self::PROP_TEXT]);
 
 			if (!empty(filter_input(INPUT_POST, $campo[self::PROP_ID])) && $campo[self::PROP_TYPE] === 'nif' && !$this->validarNIF(filter_input(INPUT_POST, $campo[self::PROP_ID])))
-				$this->errores[$campo[self::PROP_ID]] = sprintf(_('El campo introducido no es válido (%s): Escribe un NIF válido'), $campo[self::PROP_TEXT]);
+				$this->errores[$campo[self::PROP_ID]] = sprintf(__('El campo introducido no es válido (%s): Escribe un NIF válido'), $campo[self::PROP_TEXT]);
 		}
 	}
 
@@ -228,9 +228,9 @@ class Formulario
 			$this->errores[] = $data['data'];
 
 		if ($this->post($data))
-			$this->mensajes[] = _('Envío correcto');
+			$this->mensajes[] = __('Envío correcto');
 		else
-			$this->errores[] = _('Error durante el envío');
+			$this->errores[] = __('Error durante el envío');
 	}
 
 	function post($data)
