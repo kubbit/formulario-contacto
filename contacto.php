@@ -1,6 +1,6 @@
 <?php
-include_once 'formulario.class.php';
-include_once 'i18n.php';
+include_once 'include/formulario.class.php';
+include_once 'include/i18n.php';
 
 $lang = 'es';
 
@@ -23,5 +23,5 @@ $CAMPOS =
 ];
 $formulario = new Formulario(Formulario::MODE_GERKUD, 'http://gerkud.example.org/horkonpon/', null, $CAMPOS);
 
-include 'formulario.template.php';
+include 'include/formulario.template.php';
 ?>

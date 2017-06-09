@@ -35,18 +35,26 @@ class Formulario
 			if (!isset($this->CAMPOS[$i][self::PROP_ID]))
 				$this->CAMPOS[$i][self::PROP_ID] = preg_replace('/ /', '_', strtolower($this->CAMPOS[$i][self::PROP_TEXT]));
 
-			if (filter_input(INPUT_SERVER, 'REQUEST_METHOD') === 'POST' && $this->CAMPOS[$i][self::PROP_TYPE] !== 'file')
+			if ($this->getRequestMethod() === 'POST' && $this->CAMPOS[$i][self::PROP_TYPE] !== 'file')
 				$this->CAMPOS[$i][self::PROP_VALUE] = filter_input(INPUT_POST, $this->CAMPOS[$i][self::PROP_ID]);
 			else if (!array_key_exists(self::PROP_VALUE, $this->CAMPOS[$i]))
 				$this->CAMPOS[$i][self::PROP_VALUE] = '';
 		}
 
-		if (filter_input(INPUT_SERVER, 'REQUEST_METHOD') === 'POST')
+		if ($this->getRequestMethod() === 'POST')
 		{
 			$this->validar();
 			if (count($this->errores) == 0)
 				$this->enviar();
 		}
+	}
+
+	function getRequestMethod()
+	{
+		if (filter_has_var(INPUT_SERVER, 'REQUEST_METHOD'))
+			return filter_input(INPUT_SERVER, 'REQUEST_METHOD');
+
+		return $_SERVER['REQUEST_METHOD'];
 	}
 
 	function validar()
@@ -184,6 +192,7 @@ class Formulario
 	{
 		$json = Array();
 		$user = Array();
+		$file = Array();
 
 		$json['version'] = 2;
 
@@ -209,6 +218,16 @@ class Formulario
 				case 'message':
 					$json['comments'] = $campo[self::PROP_VALUE];
 					break;
+				case 'file':
+					if (empty($_FILES[$campo[self::PROP_ID]]['name']))
+						break;
+
+					$phpFile = $_FILES[$campo[self::PROP_ID]];
+					$handle = fopen($phpFile['tmp_name'], "r");
+					$contents = fread($handle, $phpFile['size']);
+					$file['content'] = base64_encode($contents);
+					$file['filename'] = $phpFile['name'];
+					break;
 				case 'reply':
 					$user['notify'] = $campo[self::PROP_VALUE];
 					break;
@@ -219,6 +238,9 @@ class Formulario
 		}
 
 		$json['user'] = $user;
+
+		if (!empty($file))
+			$json['file'] = $file;
 
 		$data = array();
 		$data['data'] = json_encode($json);

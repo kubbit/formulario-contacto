@@ -5,7 +5,7 @@
 	<head>
 		<meta charset="utf-8" />
 		<title>Hernaniko Udala</title>
-		<link rel="stylesheet" href="formularios.css" type="text/css" />
+		<link rel="stylesheet" href="css/formularios.css" type="text/css" />
 	</head>
 	<body>
 <?php if (count($formulario->errores) > 0): ?>
