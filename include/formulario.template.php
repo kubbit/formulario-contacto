@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<meta charset="utf-8" />
-		<title>Hernaniko Udala</title>
+		<title><?php echo __('Formulario'); ?></title>
 		<link rel="stylesheet" href="css/formularios.css" type="text/css" />
 	</head>
 	<body>

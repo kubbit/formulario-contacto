@@ -37,6 +37,11 @@ $translation = array
 		'es' => 'Mensaje',
 		'eu' => 'Mezua'
 	),
+	'Fichero' => array
+	(
+		'es' => 'Fichero',
+		'eu' => 'Fitxategia'
+	),
 	'Modo respuesta' => array
 	(
 		'es' => 'Modo respuesta',
@@ -71,6 +76,11 @@ $translation = array
 	(
 		'es' => 'Enviar',
 		'eu' => 'Bidali'
+	),
+	'Formulario' => array
+	(
+		'es' => 'Formulario',
+		'eu' => 'Formularioa'
 	),
 	'Es necesario completar este campo de formulario' => array
 	(

@@ -23,7 +23,7 @@ class Formulario
 	private $subject;
 	private $mode;
 
-	function Formulario($mode, $sendto, $subject, $campos)
+	function __construct($mode, $sendto, $subject, $campos)
 	{
 		$this->mode = $mode;
 		$this->sendto = $sendto;
